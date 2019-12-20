@@ -146,7 +146,7 @@ and then incorporate the specific request
   ('2019-03-07T23:00:00.000Z', 8.13)]`
 - Return this list in the main route, so loading the web application prints the
   raw list of tuples of datetimes and values
-  
+
 Getting this list of tuples may be trickier than you think - the API returns
 dictionaries inside dictionaries! You may want to use the REPL to experiment and
 iterate until you find working code, and then add it to your application.
@@ -191,6 +191,7 @@ def refresh():
     DB.drop_all()
     DB.create_all()
     # TODO Get data from OpenAQ, make Record objects with it, and add to db
+    
     DB.session.commit()
     return 'Data refreshed!'
 ```
